@@ -1,0 +1,117 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Timetable | NCERT PDFs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "surface-container": "#171f33",
+                    "surface-container-high": "#222a3d",
+                    "surface-container-lowest": "#060e20",
+                    "on-surface": "#dae2fd",
+                    "on-surface-variant": "#c2c6d6",
+                    "outline-variant": "#424754",
+                    "primary": "#adc6ff",
+                    "primary-container": "#4d8eff",
+                    "on-primary-container": "#00285d",
+                    "secondary": "#4edea3"
+                },
+                fontFamily: {
+                    sans: ["Inter", "sans-serif"]
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body { background-color: #0b1326; color: #dae2fd; font-family: 'Inter', sans-serif; animation: pushIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; overflow-x: hidden; }
+    @keyframes pushIn { from { opacity: 0; transform: translateX(30px) scale(0.98); } to { opacity: 1; transform: translateX(0) scale(1); } }
+    .fade-out { animation: pushOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards !important; }
+    @keyframes pushOut { from { opacity: 1; transform: translateX(0) scale(1); } to { opacity: 0; transform: translateX(-30px) scale(0.98); } }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; }
+</style>
+</head>
+<body class="min-h-screen flex flex-col">
+<nav class="bg-surface-container border-b border-outline-variant sticky top-0 z-50">
+    <div class="px-6 py-4 max-w-7xl mx-auto flex items-center">
+        <a href="../code/code.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <span class="material-symbols-outlined text-on-surface">arrow_back</span>
+            <span class="font-bold text-xl text-on-surface">NCERT PDFs</span>
+        </a>
+    </div>
+</nav>
+<main class="flex-grow w-full max-w-7xl mx-auto px-6 py-12">
+    
+    
+<div class="flex justify-between items-end mb-8">
+    <header>
+        <h1 class="text-4xl font-bold mb-2">Timetable</h1>
+        <p class="text-on-surface-variant text-lg">Class 10 Academic Schedule</p>
+    </header>
+    <div class="bg-surface-container-high px-4 py-3 rounded border border-outline-variant text-sm font-medium flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-secondary block"></span>
+        Current time: 15:17 — No active period
+    </div>
+</div>
+<div class="overflow-x-auto rounded-lg border border-outline-variant bg-surface-container">
+    <table class="w-full text-center text-sm whitespace-nowrap">
+        <thead>
+            <tr class="border-b border-outline-variant bg-surface-container-lowest text-on-surface-variant uppercase text-xs">
+                <th class="py-4 px-4 font-semibold">Day</th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant">P1<br><span class="text-[10px] font-normal tracking-wide">08:30-09:05</span></th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant">P2<br><span class="text-[10px] font-normal tracking-wide">09:05-09:40</span></th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant">P3<br><span class="text-[10px] font-normal tracking-wide">09:40-10:15</span></th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant">P4<br><span class="text-[10px] font-normal tracking-wide">10:15-10:50</span></th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant text-secondary">Lunch<br><span class="text-[10px] font-normal tracking-wide">10:50-11:15</span></th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant text-primary">P5<br><span class="text-[10px] font-normal tracking-wide">11:15-11:50</span></th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant text-primary">P6<br><span class="text-[10px] font-normal tracking-wide">11:50-12:25</span></th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant text-primary">P7<br><span class="text-[10px] font-normal tracking-wide">12:25-01:00</span></th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant text-primary">P8<br><span class="text-[10px] font-normal tracking-wide">01:00-01:30</span></th>
+                <th class="py-4 px-4 font-semibold border-l border-outline-variant text-secondary">Dispersal<br><span class="text-[10px] font-normal tracking-wide">01:30-02:00</span></th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-outline-variant">
+            <tr class='border-b border-outline-variant last:border-0'><td class='py-4 px-2 font-bold'>MON</td><td class='py-4 px-2 border-l border-outline-variant'>SSc</td><td class='py-4 px-2 border-l border-outline-variant'>SSc</td><td class='py-4 px-2 border-l border-outline-variant'>English</td><td class='py-4 px-2 border-l border-outline-variant'>Hindi</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td><td class='py-4 px-2 border-l border-outline-variant'>Chemistry</td><td class='py-4 px-2 border-l border-outline-variant'>Maths</td><td class='py-4 px-2 border-l border-outline-variant'>Computer</td><td class='py-4 px-2 border-l border-outline-variant'>Games</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td></tr>
+<tr class='border-b border-outline-variant last:border-0'><td class='py-4 px-2 font-bold'>TUE</td><td class='py-4 px-2 border-l border-outline-variant'>Maths</td><td class='py-4 px-2 border-l border-outline-variant'>Maths</td><td class='py-4 px-2 border-l border-outline-variant'>Hindi</td><td class='py-4 px-2 border-l border-outline-variant'>Chemistry</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td><td class='py-4 px-2 border-l border-outline-variant'>English</td><td class='py-4 px-2 border-l border-outline-variant'>Computer</td><td class='py-4 px-2 border-l border-outline-variant'>Biology</td><td class='py-4 px-2 border-l border-outline-variant'>SSc</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td></tr>
+<tr class='border-b border-outline-variant last:border-0'><td class='py-4 px-2 font-bold'>WED</td><td class='py-4 px-2 border-l border-outline-variant'>Computer</td><td class='py-4 px-2 border-l border-outline-variant'>English</td><td class='py-4 px-2 border-l border-outline-variant'>English</td><td class='py-4 px-2 border-l border-outline-variant'>Biology</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td><td class='py-4 px-2 border-l border-outline-variant'>Maths</td><td class='py-4 px-2 border-l border-outline-variant'>SSc</td><td class='py-4 px-2 border-l border-outline-variant'>Physics</td><td class='py-4 px-2 border-l border-outline-variant'>Hindi</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td></tr>
+<tr class='border-b border-outline-variant last:border-0'><td class='py-4 px-2 font-bold'>THU</td><td class='py-4 px-2 border-l border-outline-variant'>Hindi</td><td class='py-4 px-2 border-l border-outline-variant'>Maths</td><td class='py-4 px-2 border-l border-outline-variant'>Chemistry</td><td class='py-4 px-2 border-l border-outline-variant'>English</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td><td class='py-4 px-2 border-l border-outline-variant'>SSc</td><td class='py-4 px-2 border-l border-outline-variant'>Physics</td><td class='py-4 px-2 border-l border-outline-variant'>Chem/Phys<br>Prac</td><td class='py-4 px-2 border-l border-outline-variant'>M/D/T/I/A</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td></tr>
+<tr class='border-b border-outline-variant last:border-0'><td class='py-4 px-2 font-bold'>FRI</td><td class='py-4 px-2 border-l border-outline-variant'>Biology</td><td class='py-4 px-2 border-l border-outline-variant'>Hindi</td><td class='py-4 px-2 border-l border-outline-variant'>Hindi</td><td class='py-4 px-2 border-l border-outline-variant'>Physics</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td><td class='py-4 px-2 border-l border-outline-variant'>Bio/Chem<br>Prac</td><td class='py-4 px-2 border-l border-outline-variant'>English</td><td class='py-4 px-2 border-l border-outline-variant'>Maths</td><td class='py-4 px-2 border-l border-outline-variant'>SSc</td><td class='py-4 px-2 border-l border-outline-variant text-outline-variant'>--</td></tr>
+        </tbody>
+    </table>
+</div>
+
+</main>
+<footer class="bg-surface-container-lowest border-t border-outline-variant py-8">
+    <div class="max-w-7xl mx-auto px-6 text-center text-sm text-on-surface-variant flex flex-col md:flex-row justify-center md:justify-between items-center gap-4">
+        <span>© 2026 NCERT PDFs. All rights belong to NCERT.</span>
+        <div class="flex gap-4">
+            <a href="#" class="hover:text-on-surface">Privacy Policy</a>
+            <a href="#" class="hover:text-on-surface">Terms of Service</a>
+            <a href="#" class="hover:text-on-surface">Contact</a>
+        </div>
+    </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a').forEach(link => {
+            // Only intercept navigation to HTML pages, not PDFs or anchor links
+            if (link.href && !link.href.includes('#') && !link.href.toLowerCase().endsWith('.pdf')) {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    const target = link.href;
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = target;
+                    }, 300);
+                });
+            }
+        });
+    });
+</script>
+</body></html>

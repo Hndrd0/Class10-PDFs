@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer | NCERT PDFs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#0b1326",
+                        "surface-container": "#171f33",
+                        "surface-container-high": "#222a3d",
+                        "on-surface": "#dae2fd",
+                        "on-surface-variant": "#c2c6d6",
+                        "outline-variant": "#424754",
+                        "primary": "#adc6ff",
+                    },
+                    fontFamily: { sans: ["Inter", "sans-serif"] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0b1326; color: #dae2fd; font-family: 'Inter', sans-serif; overflow: hidden; animation: pushIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        @keyframes pushIn { from { opacity: 0; transform: translateX(30px) scale(0.98); } to { opacity: 1; transform: translateX(0) scale(1); } }
+        .fade-out { animation: pushOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards !important; }
+        @keyframes pushOut { from { opacity: 1; transform: translateX(0) scale(1); } to { opacity: 0; transform: translateX(-30px) scale(0.98); } }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; }
+        #pdf-iframe { width: 100%; height: calc(100vh - 4rem); border: none; background-color: #525659; }
+    </style>
+</head>
+<body class="flex flex-col h-screen">
+    <!-- Custom Toolbar -->
+    <nav class="bg-surface-container border-b border-outline-variant h-16 shrink-0 flex items-center justify-between px-4 z-50">
+        <div class="flex items-center gap-4">
+            <a href="#" id="back-btn" class="p-2 hover:bg-surface-container-high rounded-full transition-colors flex items-center">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+            <h1 id="doc-title" class="font-semibold truncate max-w-[200px] md:max-w-md">Document Viewer</h1>
+        </div>
+
+    </nav>
+
+    <!-- Embedded Native Viewer for Zero Lag -->
+    <iframe id="pdf-iframe" title="PDF Viewer"></iframe>
+
+    <script>
+        // Transition back logic
+        document.getElementById('back-btn').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.history.back();
+            }, 300);
+        });
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfUrl = urlParams.get('file');
+        
+        if(pdfUrl) {
+            // Display title
+            const parts = pdfUrl.split('/');
+            document.getElementById('doc-title').textContent = decodeURIComponent(parts[parts.length-1].replace('.pdf', ''));
+            
+            // Append #view=FitH so the PDF fits the screen width automatically
+            document.getElementById('pdf-iframe').src = pdfUrl + "#view=FitH";
+        } else {
+            document.getElementById('doc-title').textContent = "No PDF specified";
+        }
+    </script>
+</body>
+</html>
